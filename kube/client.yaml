@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: client
-        image: miggylol/tdg-client:1.0.3
+        image: miggylol/tdg-client:1.0.10
+        imagePullPolicy: Always
         ports:
         - containerPort: 3000
 ---
@@ -30,7 +31,7 @@ spec:
   selector:
     app: client
   ports:
-  - port: 3000
-    nodePort: 30082
-  type: NodePort
+  - port: 30082
+    targetPort: 3000
+  type: LoadBalancer
 

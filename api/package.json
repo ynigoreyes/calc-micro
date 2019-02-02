@@ -1,6 +1,6 @@
 {
   "name": "tdg-api",
-  "version": "1.0.2",
+  "version": "1.0.8",
   "description": "API for the drunk game",
   "main": "index.js",
   "scripts": {
@@ -13,6 +13,7 @@
   "license": "ISC",
   "dependencies": {
     "body-parser": "1.18.3",
+    "cors": "2.8.5",
     "express": "4.16.4"
   }
 }

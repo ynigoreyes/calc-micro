@@ -16,7 +16,8 @@ spec:
     spec:
       containers:
       - name: game
-        image: miggylol/tdg-game:1.0.2
+        image: miggylol/tdg-game:1.0.8
+        imagePullPolicy: Always
         ports:
         - containerPort: 8081
 ---
@@ -28,6 +29,7 @@ spec:
   selector:
     app: game
   ports:
-  - port: 8081
-    nodePort: 30081
-  type: NodePort
+  - port: 30081
+    targetPort: 8081
+  type: LoadBalancer
+  loadBalancerIP: 104.197.134.202

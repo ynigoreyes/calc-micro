@@ -5,7 +5,7 @@ import * as axios from 'axios'
 
 export default class Content extends React.Component {
   handleClick = (name) => () => {
-    axios.post('http://game:30081/api/v1/game', { button: name})
+    axios.post('http://104.197.134.202:30081/api/v1/game', { button: name})
       .then(({ data }) => {
         console.log(`${data} button was pressed`)
       }).catch((err) => {
