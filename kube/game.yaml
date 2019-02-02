@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: game
+  labels:
+    app: game
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: game
+  template:
+    metadata:
+      labels:
+        app: game
+    spec:
+      containers:
+      - name: game
+        image: miggylol/tdg-game:1.0.2
+        ports:
+        - containerPort: 8081
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: game
+spec:
+  selector:
+    app: game
+  ports:
+  - port: 8081
+    nodePort: 30081
+  type: NodePort
