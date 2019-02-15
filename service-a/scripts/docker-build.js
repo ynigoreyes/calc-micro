@@ -3,7 +3,7 @@ const pkgjson = require('../package.json')
 
 console.log(`building for image ${pkgjson.version}`)
 
-const ls = spawn('docker', ['build', '-t', `miggylol/tdg-game:${pkgjson.version}`, '.'])
+const ls = spawn('docker', ['build', '-t', `miggylol/service-a`, '.'])
 
 ls.stdout.on('data', (data) => {
   console.log(data.toString())

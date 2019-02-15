@@ -4,14 +4,13 @@ const cors = require('cors')
 
 const app = express()
 
-const PORT = 8081
+const PORT = process.env.PORT || 8080
 
 app.use(cors({ origin: true }))
 app.use(bp.json())
 
-app.post('/api/v1/game', (req, res) => {
-  console.log('works')
-  res.json({ msg: 'Works' })
+app.get('/', (req, res) => {
+  res.send('Welcome to K8s: API')
 })
 
 app.use('*', (req, res) => {

@@ -1,0 +1,19 @@
+{
+  "name": "service-a",
+  "version": "1.0.0",
+  "description": "service a",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "docker-build": "node scripts/docker-build.js",
+    "docker-push": "node scripts/docker-push.js",
+    "docker": "yarn docker-build && yarn docker-push"
+  },
+  "author": "Miggy",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.18.3",
+    "cors": "2.8.5",
+    "express": "4.16.4"
+  }
+}

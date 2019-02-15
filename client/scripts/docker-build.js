@@ -3,10 +3,10 @@ const pkgjson = require('../package.json')
 
 console.log(`building for image ${pkgjson.version}`)
 
-const ls = spawn('docker', ['build', '-t', `miggylol/tdg-client:${pkgjson.version}`, '.'])
+const ls = spawn('docker', ['build', '-t', 'miggylol/client', '.'])
 
 ls.stdout.on('data', (data) => {
-  console.log('std: ', data.toString())
+  console.log(data.toString())
 })
 
 ls.stderr.on('data', (data) => {

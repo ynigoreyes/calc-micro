@@ -10,15 +10,7 @@ COPY yarn.lock ./
 RUN yarn
 
 # Copying source files
-COPY .next ./.next
-COPY components ./components
-COPY pages ./pages
-COPY next.config.js .
-
-RUN ls
-
-# Building app
-RUN yarn build
+COPY index.js .
 
 # Running the app
 CMD [ "yarn", "start" ]
