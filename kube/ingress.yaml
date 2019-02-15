@@ -1,0 +1,20 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: fanout-ingress
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /*
+        backend:
+          serviceName: client
+          servicePort: 3000
+      - path: /api/a/*
+        backend:
+          serviceName: service-a
+          servicePort: 8080
+      - path: /api/b/*
+        backend:
+          serviceName: service-b
+          servicePort: 8081
