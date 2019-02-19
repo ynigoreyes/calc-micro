@@ -1,3 +1,7 @@
 #! /bin/sh
 
-./client && ./service-a && ./service-b
+kubectl delete -f client.yaml
+kubectl delete -f add.yaml
+kubectl delete -f sub.yaml
+kubectl delete -f ingress.yaml
+./client && ./add && ./sub && ./ingress

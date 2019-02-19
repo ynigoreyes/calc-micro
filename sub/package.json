@@ -1,10 +1,11 @@
 {
-  "name": "service-a",
+  "name": "service-b",
   "version": "1.0.0",
-  "description": "service a",
+  "description": "service b",
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon",
     "docker-build": "node scripts/docker-build.js",
     "docker-push": "node scripts/docker-push.js",
     "docker": "yarn docker-build && yarn docker-push"
@@ -15,5 +16,8 @@
     "body-parser": "1.18.3",
     "cors": "2.8.5",
     "express": "4.16.4"
+  },
+  "devDependencies": {
+    "nodemon": "1.18.10"
   }
 }

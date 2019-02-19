@@ -1,0 +1,18 @@
+version: '3'
+services:
+  add:
+    build: ./add
+    command: yarn dev
+    volumes:
+      - ./add:/usr/src/app
+      - ./add/node_modules:/usr/src/app/node_modules
+    ports:
+      - "8080:8080"
+  sub:
+    build: ./sub
+    command: yarn dev
+    volumes:
+      - ./sub:/usr/src/app
+      - ./sub/node_modules:/usr/src/app/node_modules
+    ports:
+      - "8081:8080"

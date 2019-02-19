@@ -1,22 +1,22 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: service-a
+  name: add
   labels:
-    app: service-a
+    app: add
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: service-a
+      app: add
   template:
     metadata:
       labels:
-        app: service-a
+        app: add
     spec:
       containers:
-      - name: service-a
-        image: miggylol/service-a
+      - name: add
+        image: miggylol/add
         imagePullPolicy: Always
         ports:
         - containerPort: 8080
@@ -24,12 +24,14 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: service-a
+  name: add
   labels:
-    app: service-a
+    app: add
 spec:
-  selector:
-    app: service-a
-  ports:
-  - port: 8080
   type: NodePort
+  selector:
+    app: add
+  ports:
+  - protocol: TCP
+    port: 8080
+    targetPort: 8080

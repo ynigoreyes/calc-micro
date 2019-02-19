@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: fanout-ingress
+  name: gcp-ingress
 spec:
   rules:
   - http:
@@ -9,12 +9,12 @@ spec:
       - path: /*
         backend:
           serviceName: client
-          servicePort: 3000
-      - path: /api/a/*
+          servicePort: 80
+      - path: /api/add/*
         backend:
-          serviceName: service-a
+          serviceName: add
           servicePort: 8080
-      - path: /api/b/*
+      - path: /api/sub/*
         backend:
-          serviceName: service-b
+          serviceName: sub
           servicePort: 8081

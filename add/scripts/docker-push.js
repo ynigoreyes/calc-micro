@@ -1,9 +1,9 @@
 const { spawn } = require('child_process')
 const pkgjson = require('../package.json')
 
-console.log(`building for image ${pkgjson.version}`)
+console.log(`pushing for image ${pkgjson.version}`)
 
-const ls = spawn('docker', ['build', '-t', `miggylol/service-a`, '.'])
+const ls = spawn('docker', ['push', `miggylol/add`])
 
 ls.stdout.on('data', (data) => {
   console.log(data.toString())

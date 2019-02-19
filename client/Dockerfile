@@ -11,8 +11,8 @@ RUN yarn
 
 # Copying source files
 COPY .next ./.next
-COPY components ./components
 COPY pages ./pages
+COPY _constants ./_constants
 COPY next.config.js .
 
 RUN ls
